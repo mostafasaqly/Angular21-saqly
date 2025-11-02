@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-profile-photo',
@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './profile-photo.css',
 })
 export class ProfilePhoto {
+  counter = signal<number>(0);
 
+  constructor()
+  {
+    this.counter.set( this.counter()+1 );
+  }
 }

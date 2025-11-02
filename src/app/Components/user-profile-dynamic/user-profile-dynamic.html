@@ -1,0 +1,42 @@
+<h1>{{greeting()}}</h1>
+<p>Raw Full Name : {{userName()}}</p>
+<hr>
+
+<button class="btn btn-primary" [disabled]="isSaving()"
+(click)="saveProfile()"> {{isSaving() ? 'Saving': 'Save Changes'}}</button>
+
+<button class="btn btn-outline-secondary ms-2" [attr.aria-pressed]="admin()"
+(click)="toggleAdmin()">
+  {{admin() ? 'Admin : ON' : 'Admin : OFF'}}
+
+</button>
+<hr>
+<label class="form-label">Upate User Name</label>
+<input class="form-control mb-2"  [value]="userName()" (input)="onNameInput($event)"/>
+<input class="form-control mb-2" [ngModel]="userName()" (ngModelChange)="userName.set($event)" >
+<input class="form-control mb-2" [(ngModel)]="userName">
+<p>Updated Full Name : {{userName()}}</p>
+
+
+<h2>User Profile</h2>
+@if(admin())
+{
+  <h3 class="text-danger">You have Admin Privileges</h3>
+}
+@else  {
+  <h3 class="text-muted">User Settings</h3>
+}
+<h4 class="mt-3">Badges</h4>
+<ul>
+  @for(badge of badges(); track badge.id){
+  <li class="text-bg-dark d-flex align-items-center gap-2 p-2">
+    <span>{{badge.name}}</span>
+    <button class="btn btn-sm btn-danger ms-auto" (click)="removeBadge(badge.id)">Remove</button>
+  </li>
+}
+</ul>
+
+<div class="input-group mt-2" style="max-width: 360px;">
+  <input class="form-control" placeholder="New Badge Name" #badgeName/>
+  <button class="btn btn-success" (click)="addBadge(badgeName.value); badgeName.value=''">Add Badge</button>
+</div>
