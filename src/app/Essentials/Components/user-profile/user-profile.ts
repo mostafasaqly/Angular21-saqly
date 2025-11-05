@@ -1,7 +1,7 @@
 import { Component, computed, signal } from '@angular/core';
 import { ProfilePhoto } from "../profile-photo/profile-photo";
 import { UserBiography } from "../user-biography/user-biography";
-import { UserProfileDynamic } from "../user-profile-dynamic/user-profile-dynamic";
+import { UserProfileDynamic } from '../../user-profile-dynamic/user-profile-dynamic';
 
 @Component({
   selector: 'user-profile',
