@@ -1,11 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
-import {  UserProfile } from "./Essentials/Components/user-profile/user-profile";
-import { Receipt } from "./Essentials/DependencyInjection/receipt/receipt";
 import { Calculator } from './Essentials/DependencyInjection/calculator';
+import { AnatomyComponent } from "./Components/AnatomyOfComponents/anatomyOfComponent";
 
 @Component({
   selector: 'app-root',
-  imports: [UserProfile, Receipt],
+  imports: [AnatomyComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -16,4 +15,6 @@ export class App {
   }
   private calculator = inject(Calculator);
 totalCost = signal( this.calculator.subtract(200, 100));
+
+valueToChild=signal<string>('Click Me from App Component');
 }
