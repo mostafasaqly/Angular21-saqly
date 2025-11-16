@@ -1,0 +1,16 @@
+<h2>Parent Component</h2>
+<label >Enter Name :
+  <input [(ngModel)]="userName" />
+</label>
+<label >Enter Age :
+  <input [(ngModel)]="userAge" />
+</label>
+<hr/>
+
+
+<button class="btn btn-primary" (click)="toggleChild()">Toggle Child Component</button>
+@if(showChild)
+{
+  <app-no-on-changes-child [name]="userName" [age]="userAge"></app-no-on-changes-child>
+
+}
