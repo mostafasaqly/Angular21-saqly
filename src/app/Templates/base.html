@@ -1,0 +1,152 @@
+<!-- BINDING DYNAMIC TEXT / PROPERTIES / ATTRIBUTES -->
+<div class="container py-4">
+
+  <h1 class="mb-3" [title]="title">
+    {{ title }}
+  </h1>
+
+  <div class="alert alert-primary">
+    Welcome,
+    <strong class="fw-bold" [ngClass]="{ 'text-success': isPro }">
+      {{ user.name }}
+    </strong>
+    – Level: {{ user.level }}
+  </div>
+
+  <p class="text-muted">
+    Total score (x10): <strong>{{ user.points * 10 }}</strong>
+  </p>
+
+  <!-- TWO-WAY BINDING -->
+  <div class="mb-3">
+    <label class="form-label">Edit name:</label>
+    <input
+      #nameInput
+      type="text"
+      class="form-control w-50"
+      [(ngModel)]="user.name"
+      placeholder="Type new name"
+    />
+  </div>
+
+  <button class="btn btn-outline-primary mb-4" (click)="toggleDetails()">
+    {{ showDetails ? 'Hide details' : 'Show details' }}
+  </button>
+
+  <hr />
+
+  <!-- CONTROL FLOW (@if) + PIPES -->
+  @if (showDetails) {
+    <section class="card p-3 shadow-sm mb-4">
+      <h2 class="h4 mb-3">User details</h2>
+
+      <p>Today is: <strong>{{ today | date: 'fullDate' }}</strong></p>
+      <p>Points: <strong>{{ user.points | number }}</strong></p>
+      <p>Estimated value: <strong>{{ user.points * 1.5 | currency:'USD' }}</strong></p>
+
+      @if(isPro){
+      <p class="text-success fw-bold">
+        This user has a PRO subscription.
+      </p>
+    }
+    </section>
+  } @else {
+    <p class="text-muted fst-italic">User details are hidden.</p>
+  }
+
+  <hr />
+
+  <!-- SKILLS LIST -->
+  <section class="mb-4">
+    <h2 class="h4 mb-3">Skills</h2>
+
+    <ng-template #noSkillsTpl>
+      <div class="alert alert-warning">No skills added yet.</div>
+    </ng-template>
+
+    @if (skills.length === 0) {
+      <ng-container [ngTemplateOutlet]="noSkillsTpl"></ng-container>
+    } @else {
+      <ul class="list-group mb-3">
+        @for (skill of skills; track $index; let i = $index; let isLast = $last) {
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <span class="badge bg-secondary me-2">{{ i + 1 }}</span>
+              {{ skill }}
+              @if(isLast){
+              <span  class="text-muted small">(last item)</span>
+              }
+            </div>
+
+            <button
+              class="btn btn-sm btn-danger"
+              type="button"
+              (click)="removeSkill(i)"
+            >
+              x
+            </button>
+          </li>
+        }
+      </ul>
+    }
+
+    <div class="d-flex gap-2">
+      <input
+        type="text"
+        class="form-control w-50"
+        [(ngModel)]="newSkill"
+        placeholder="Add new skill"
+        (keyup.enter)="addSkill()"
+      />
+
+      <button class="btn btn-primary" type="button" (click)="addSkill()">
+        Add
+      </button>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- SLOTTING CHILD CONTENT WITH ng-content -->
+  <section class="mb-4">
+    <h2 class="h4 mb-3">Profile card (ng-content)</h2>
+
+    <app-profile-card class="d-block">
+  <h3 card-title>{{ user.name }}</h3>
+
+  <p card-body>
+    Level: {{ user.level }}<br />
+    Points: {{ user.points | number }}
+  </p>
+
+  <p card-footer>
+    Last login: {{ today | date: 'short' }}
+  </p>
+</app-profile-card>
+
+  </section>
+
+  <hr />
+
+  <!-- DEFERRED LOADING WITH @defer -->
+  <section class="mb-5" >
+
+
+    @defer (on viewport) {
+      <h2 class="h4 mb-3">Deferred section </h2>
+      <div class="p-3 border rounded shadow-sm">
+        <app-expensive-widget></app-expensive-widget>
+      </div>
+    }
+    @placeholder {
+      <p class="text-muted">Scroll here to load the statistics widget…</p>
+    }
+    @loading {
+      <p class="text-info">Loading widget…</p>
+    }
+    @error {
+      <p class="text-danger">Could not load widget.</p>
+    }
+  </section>
+
+</div>

@@ -1,10 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { Calculator } from './Essentials/DependencyInjection/calculator';
-import { NgOnChangesParent } from "./Components/LifeCycle/ng-on-changes-parent/ng-on-changes-parent";
+import { BaseComponent } from "./Templates/base";
 
 @Component({
   selector: 'app-root',
-  imports: [ NgOnChangesParent],
+  imports: [BaseComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
