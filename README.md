@@ -1,59 +1,130 @@
-# DemoProject
+# Angular 21 – Saqly Learning Path
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.7.
+This repository contains a full learning path for Angular 21, organized to match the official Angular Documentation structure.  
+Each folder represents a topic or chapter demonstrated in the project.
 
-## Development server
+---
 
-To start a local development server, run:
+## 1. Introduction
+Fundamental Angular concepts and quick start materials.
 
-```bash
-ng serve
-```
+- What is Angular?  
+- Installation  
+- Essentials → [`/src/app/Essentials`](src/app/Essentials)  
+- Start Coding  
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 2. Signals (In-depth Guides)
+Modern Angular reactivity using Signals.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Topics include:
 
-```bash
-ng generate component component-name
-```
+- Signal basics  
+- Computed signals  
+- Effects  
+- Signal-based forms  
+- Best practices  
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Folder:  
+[`/src/app/Signals`](src/app/Signals)
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 3. Components
+Everything related to building and understanding Angular components.
 
-To build the project run:
+- Component structure  
+- Inputs & Outputs  
+- Change Detection  
+- Content Projection (`ng-content`)  
+- View Queries  
 
-```bash
-ng build
-```
+Folder:  
+[`/src/app/Components`](src/app/Components)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 4. Templates
+Full coverage of the new Angular template syntax.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- Control Flow (`@if`, `@for`, `@switch`)  
+- Blocks  
+- Template expressions  
+- Rendering performance tips  
 
-```bash
-ng test
-```
+Folder:  
+[`/src/app/Templates`](src/app/Templates)
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 5. Directives
+Deep dive into Angular directives.
 
-```bash
-ng e2e
-```
+- Structural directives  
+- Attribute directives  
+- HostBinding / HostListener  
+- Reusable directive patterns  
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Folder:  
+[`/src/app/Directives Part`](src/app/Directives%20Part)
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 6. Dependency Injection (Updated)
+Modern DI system in Angular 21.
+
+Topics include:
+
+- `inject()` function  
+- `providedIn` options  
+- Tree-shakable providers  
+- Hierarchical injectors  
+
+Folder:  
+[`/src/app/Dependency injection`](src/app/Dependency%20injection)
+
+---
+
+## 7. Routing (Updated) -- Soon
+New routing patterns introduced in Angular 21.
+
+- Standalone routing  
+- Route providers  
+- Lazy loading  
+- Route guards  
+
+(If you add routing demos, place them in:  
+`/src/app/Routing`)
+
+---
+
+## 8. Forms (Updated) -- Soon
+Covers all Angular form systems:
+
+- Template-driven forms  
+- Reactive forms  
+- Signal Forms (the new recommended system)  
+
+Signal Forms examples are inside the Signals folder.
+
+---
+
+## 9. HTTP Client -- Soon
+Best practices for handling APIs in Angular.
+
+Recommended folder name (if added later):  
+`/src/app/Http`
+
+---
+
+## 📌 Notes
+- Folders are organized based on the Angular Documentation structure.  
+- Each chapter aligns with real Angular v21 features and best practices.  
+- You can extend the repo with Routing, HTTP, State Management, Tailwind, or Angular ARIA demos at any time.
+
+---
+
+## 🎯 Goal of This Repository
+This repo serves as a practical, hands-on learning path for Angular 21 — following the exact order of the official Angular docs, but with real examples, simplified explanations, and clean project organization.
+
