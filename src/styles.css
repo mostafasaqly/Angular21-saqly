@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+
+main.layout {
+  view-transition-name: main-route;
+}
+
+
+::view-transition-old(main-route),
+::view-transition-new(main-route) {
+  animation-duration: 180ms;
+}
+

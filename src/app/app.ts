@@ -1,10 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { Calculator } from './Essentials/DependencyInjection/calculator';
-import { AppLogComponent } from "./Dependency injection/logComponent";
+import { AppStartComponent } from "./Routing/appStart";
 
 @Component({
   selector: 'app-root',
-  imports: [AppLogComponent],
+  imports: [ AppStartComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
