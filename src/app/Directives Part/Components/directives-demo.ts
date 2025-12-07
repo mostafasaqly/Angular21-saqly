@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 
 import { ComposedButton } from './composed-button';
@@ -10,12 +10,11 @@ import { Highlight } from '../Directives/highlight.directive';
   standalone: true,
   selector: 'directives-demo',
   imports: [
-    CommonModule,
     Unless,
     ComposedButton,
     ImageOptimizedDemo,
     Highlight
-  ],
+],
   template: `
     <h1>Angular Directives Demo</h1>
 

@@ -219,12 +219,77 @@ ng test
 
 ---
 
-## 8. Forms (Updated) -- Soon
-Covers all Angular form systems:
+## 8. Forms (Updated) 
+# Angular Forms Demo (v21)
 
-- Template-driven forms  
-- Reactive forms  
-- Signal Forms (the new recommended system)  
+This project demonstrates the different form capabilities in **Angular 21**, including the new **Signal-Based Forms API**, classic Reactive Forms, Typed Reactive Forms, Template-driven Forms, and Dynamic Forms using `FormArray`.
+
+The demo provides a clean tab-based UI for switching between the different examples:
+
+---
+
+## 📌 Available Demo Views
+
+### 1. **Signal Forms**
+Located in: `signal-login-form.component.ts`  
+- Uses Angular 21's new **signal-based forms** API.  
+- Fully reactive without zones.  
+- Uses `form()`, `Field`, validators, and `submit()`.  
+- Demonstrates validation and control flow (`@if`, `@switch`) in templates.
+
+---
+
+### 2. **Reactive Forms**
+Located in: `reactive-profile-form.component.ts`  
+- Demonstrates the classic **Reactive Forms API** (`FormGroup`, `FormControl`).  
+- Includes validation and value changes tracking.  
+- Foundation for most enterprise Angular applications.
+
+---
+
+### 3. **Strictly Typed Reactive Forms**
+Located in: `typed-order-form.component.ts`  
+- Shows the typed version of reactive forms introduced recently.  
+- Strong typing → fewer runtime errors & better autocomplete.
+
+---
+
+### 4. **Template-driven Forms**
+Located in: `template-contact-form.component.ts`  
+- Standard Angular template-driven approach using `ngModel`.  
+- Suitable for simple, small-scale forms.
+
+---
+
+### 5. **Dynamic Forms (Reactive FormArray)**
+Located in: `dynamic-survey-form.component.ts`  
+- Demonstrates building forms dynamically from configuration.  
+- Useful for surveys, dynamic UI building, and admin panels.
+
+---
+
+### 6. **Dynamic Input Forms (Add/Remove Inputs at Runtime)**
+Located in: `DynamicInputDemo.component.ts`  
+- Uses `FormArray` to add/remove inputs dynamically.  
+- Each input has its own validation.  
+- Uses Angular v21 template features:  
+  - `@for` for looping  
+  - `@if` for conditional rendering  
+  - Tracking by the form control itself (`track item`) for stable DOM updates
+
+Example behavior:
+- Click **+** to add a new input  
+- Click **–** to remove a specific input  
+- Cannot accidentally delete the wrong field thanks to stable tracking  
+- Automatically updates JSON output below the form
+
+---
+
+## 🧭 Navigation Component
+
+The main navigation exists in:
+
+
 
 Signal Forms examples are inside the Signals folder.
 

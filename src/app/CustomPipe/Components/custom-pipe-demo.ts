@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { ExclaimPipe } from '../Pipes/exclaim';
 
 @Component({
   standalone: true,
   selector: 'custom-pipe-demo',
-  imports: [CommonModule, FormsModule, ExclaimPipe],
+  imports: [FormsModule, ExclaimPipe],
   template: `
     <div class="pipe-demo">
       <label>
