@@ -3,6 +3,8 @@ import { PreloadAllModules, provideRouter, RedirectCommand, Router, withComponen
 
 import { routes } from './app.routes';
 import { APP_CONFIG } from './Dependency injection/app-config.token';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { loggingInterceptor } from './HttpClinet/logging.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -36,6 +38,9 @@ export const appConfig: ApplicationConfig = {
         urlUpdateStrategy: 'deferred',
       }),
       withViewTransitions() // Route transition animations (View Transitions API)
+    ),
+    provideHttpClient(
+      withInterceptors([loggingInterceptor]) // intercepting requests/responses
     ),
   ]
 };

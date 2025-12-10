@@ -1,10 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { Calculator } from './Essentials/DependencyInjection/calculator';
-import { FormsDemoComponent } from "./Forms/forms-demo.component";
+import { AppHttpComponent } from "./HttpClinet/apphttp.component";
 
 @Component({
   selector: 'app-root',
-  imports: [ FormsDemoComponent],
+  imports: [ AppHttpComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
