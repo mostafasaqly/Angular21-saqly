@@ -295,10 +295,111 @@ Signal Forms examples are inside the Signals folder.
 
 ---
 
-## 9. HTTP Client -- Soon
-Best practices for handling APIs in Angular.
+## 9. HTTP Client --
+1. GET – Fetch list of posts
 
-Recommended folder name (if added later):  
+Uses HttpClient.get()
+
+Handles loading, error states, and signals
+
+Supports query params (_limit=10)
+
+Renders list using @for
+
+Files:
+http-list.component.ts, http-demo.service.ts
+
+2. POST – Create new post
+
+Reactive Form
+
+Sends data with POST
+
+Disables button while submitting
+
+Displays server JSON response
+
+File: http-create.component.ts
+
+3. PUT / PATCH – Edit post
+
+Inline edit mode
+
+Updates using PUT
+
+UI updates instantly without reloading
+
+Files:
+http-list.component.ts → saveEdit()
+http-demo.service.ts → updatePost()
+
+4. DELETE – Remove post
+
+Confirmation dialog
+
+Removes from UI immediately
+
+Uses HttpClient.delete()
+
+Component: delete handler inside http-list.component.ts
+
+5. httpResource – Reactive data fetching
+
+Modern reactive data API (Angular 17+):
+
+resource = inject(HttpClient).resource<Post[]>({
+  url: 'https://jsonplaceholder.typicode.com/posts'
+});
+
+
+File: http-resource-demo.component.ts
+
+6. Logging Interceptor
+
+Logs every request:
+
+Method
+
+URL
+
+Status
+
+Duration
+
+Registered in app.config.ts:
+
+provideHttpClient(withInterceptors([loggingInterceptor]))
+
+
+File: logging.interceptor.ts
+
+7. Apidog Mock API Integration
+
+Mock backend replacing jsonplaceholder for testing.
+
+Supports:
+
+GET /posts?limit=10
+
+POST /posts
+
+PUT /posts/:id
+
+DELETE /posts/:id
+
+File: apiDog.service.ts
+Component: http-list-apidog.component.ts
+
+📁 Project Structure
+/HttpClient
+│── apphttp.component.ts
+│── http-list.component.ts
+│── http-create.component.ts
+│── http-resource-demo.component.ts
+│── http-demo.service.ts
+│── apiDog.service.ts
+│── logging.interceptor.ts
+
 `/src/app/Http`
 
 ---
