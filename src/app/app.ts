@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { Calculator } from './Essentials/DependencyInjection/calculator';
-import { AppHttpComponent } from "./HttpClinet/apphttp.component";
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
-  imports: [ AppHttpComponent],
+  imports: [RouterLink, RouterOutlet,RouterLinkActive ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -14,7 +15,20 @@ export class App {
     isLoggedIn.set(true);
   }
   private calculator = inject(Calculator);
-totalCost = signal( this.calculator.subtract(200, 100));
+  totalCost = signal(this.calculator.subtract(200, 100));
 
-valueToChild=signal<string>('Click Me from App Component');
+  valueToChild = signal<string>('Click Me from App Component');
+  navItems = [
+    { label: 'Home', path: '' },
+
+    { label: 'Signals', path: 'signals/linked' },
+    { label: 'Components', path: 'components/anatomy' },
+    { label: 'Lifecycle – OnChanges', path: 'lifecycle/ng-on-changes' },
+    { label: 'Templates', path: 'templates/base' },
+    { label: 'Directives', path: 'directives/demo' },
+    { label: 'Pipes', path: 'pipes/custom' },
+    { label: 'Forms', path: 'forms/demo' },
+    { label: 'HTTP Client', path: 'http-client' },
+    { label: 'Logging', path: 'logging' },
+  ];
 }

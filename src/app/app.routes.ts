@@ -21,6 +21,16 @@ import { RouteStateDemoComponent } from './Routing/route-state-demo';
 import { ProductsComponent } from './Routing/products';
 import { FakeUserService, User } from './Routing/fake-user.service';
 import { authGuard } from './Routing/auth.guard';
+import { AppStartComponent } from './Routing/appStart';
+import { LinkedSignal } from './Signals/linked-signal/linked-signal';
+import { AnatomyComponent } from './Components/AnatomyOfComponents/anatomyOfComponent';
+import { NgOnChangesParent } from './Components/LifeCycle/ng-on-changes-parent/ng-on-changes-parent';
+import { BaseComponent } from './Templates/base';
+import { DirectivesDemo } from './Directives Part/Components/directives-demo';
+import { CustomPipeDemo } from './CustomPipe/Components/custom-pipe-demo';
+import { FormsDemoComponent } from './Forms/forms-demo.component';
+import { AppHttpComponent } from './HttpClinet/apphttp.component';
+import { AppLogComponent } from './Dependency injection/logComponent';
 
 
 
@@ -61,86 +71,79 @@ const twitterHandleMatcher: UrlMatcher = (
 };
 
 export const routes: Routes = [
-  // Overview / Home
+  // Home – Learning Path landing page
   {
     path: '',
-    component: HomeComponent,
-    title: 'Routing Demo Home',
+    component: AppStartComponent,
+    title: 'Angular 21 – Saqly Learning Path',
   },
 
-  // Redirecting routes
+  // Signals
   {
-    path: 'old-home',
-    redirectTo: '',
-    pathMatch: 'full',
+    path: 'signals/linked',
+    component: LinkedSignal,
+    title: 'Signals – Linked Signal Demo',
   },
 
-  // Navigation + Route params + Resolver
+  // Components
   {
-    path: 'products',
-    component: ProductsComponent,
-    title: 'Navigate & Params Demo',
-  },
-  {
-    path: 'users/:id',
-    component: UserDetailsComponent,
-    resolve: { user: userResolver },
-    title: 'User details (resolver)',
-    data: { requiresAuth: true },
-    canActivate: [authGuard],
+    path: 'components/anatomy',
+    component: AnatomyComponent,
+    title: 'Components – Anatomy',
   },
 
-  // Read route state / query params / fragment
+  // Lifecycle (OnChanges)
   {
-    path: 'route-state',
-    component: RouteStateDemoComponent,
-    title: 'Route state demo',
+    path: 'lifecycle/ng-on-changes',
+    component: NgOnChangesParent,
+    title: 'Lifecycle – OnChanges Demo',
   },
 
-  // Child routes (outlets)
+  // Templates
   {
-    path: 'admin',
-    component: AdminLayoutComponent,
-    canDeactivate: [pendingChangesGuard],
-    children: [
-      {
-        path: 'dashboard',
-        component: AdminDashboardComponent,
-        title: 'Admin dashboard',
-      },
-      {
-        path: 'settings',
-        component: AdminSettingsComponent,
-        title: 'Admin settings',
-      },
-    ],
+    path: 'templates/base',
+    component: BaseComponent,
+    title: 'Templates – Base Demo',
   },
 
-  // Named outlet – popup help
+  // Directives
   {
-    path: 'help',
-    outlet: 'popup',
-    component: PopupHelpComponent,
+    path: 'directives/demo',
+    component: DirectivesDemo,
+    title: 'Directives – Demo',
   },
 
-  // Custom route match – /@username
+  // Pipes
   {
-    matcher: twitterHandleMatcher,
-    component: CustomMatchProfileComponent,
-    title: 'Custom matcher profile',
+    path: 'pipes/custom',
+    component: CustomPipeDemo,
+    title: 'Pipes – Custom Pipe Demo',
   },
 
-  // Error page (for navigation error handler)
+  // Forms
   {
-    path: 'error',
-    component: ErrorPageComponent,
-    title: 'Navigation error',
+    path: 'forms/demo',
+    component: FormsDemoComponent,
+    title: 'Forms – Demo',
   },
 
-  // Wildcard 404
+  // HTTP Client
+  {
+    path: 'http-client',
+    component: AppHttpComponent,
+    title: 'HTTP Client – Demo',
+  },
+
+  // Logging / Router events or console logs playground
+  {
+    path: 'logging',
+    component: AppLogComponent,
+    title: 'Logging – Demo',
+  },
+
+  // Fallback
   {
     path: '**',
-    component: NotFoundComponent,
-    title: 'Not found',
+    redirectTo: '',
   },
 ];

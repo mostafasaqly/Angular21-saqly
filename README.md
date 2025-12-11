@@ -1,416 +1,148 @@
-# Angular 21 – Saqly Learning Path
+Angular 21 – Saqly Learning Path
 
-This repository contains a full learning path for Angular 21, organized to match the official Angular Documentation structure.  
-Each folder represents a topic or chapter demonstrated in the project.
+This repository contains a complete, structured learning path for Angular 21, aligned with the official documentation.
+Each folder represents a chapter with practical demos.
 
----
+1. Introduction
 
-## 1. Introduction
-Fundamental Angular concepts and quick start materials.
+Core Angular concepts and quick-start materials.
 
-- What is Angular?  
-- Installation  
-- Essentials → [`/src/app/Essentials`](src/app/Essentials)  
-- Start Coding  
+Topics
 
----
+What is Angular
 
-## 2. Signals (In-depth Guides)
-Modern Angular reactivity using Signals.
+Installation
 
-Topics include:
+Essentials → src/app/Essentials
 
-- Signal basics  
-- Computed signals  
-- Effects  
-- Signal-based forms  
-- Best practices  
+2. Signals
 
-Folder:  
-[`/src/app/Signals`](src/app/Signals)
+Modern reactivity system introduced in Angular 21.
 
----
+Topics
 
-## 3. Components
-Everything related to building and understanding Angular components.
+Signal basics
 
-- Component structure  
-- Inputs & Outputs  
-- Change Detection  
-- Content Projection (`ng-content`)  
-- View Queries  
+Computed / Effects
 
-Folder:  
-[`/src/app/Components`](src/app/Components)
+Signal-based forms
 
----
+Folder
 
-## 4. Templates
-Full coverage of the new Angular template syntax.
+src/app/Signals
 
-- Control Flow (`@if`, `@for`, `@switch`)  
-- Blocks  
-- Template expressions  
-- Rendering performance tips  
+3. Components
 
-Folder:  
-[`/src/app/Templates`](src/app/Templates)
+Building UI using standalone components.
 
----
+Topics
 
-## 5. Directives
-Deep dive into Angular directives.
+Inputs / Outputs
 
-- Structural directives  
-- Attribute directives  
-- HostBinding / HostListener  
-- Reusable directive patterns  
+Change Detection
 
-Folder:  
-[`/src/app/Directives Part`](src/app/Directives%20Part)
+Content Projection
 
----
+Folder
 
-## 6. Dependency Injection (Updated)
-Modern DI system in Angular 21.
+src/app/Components
 
-Topics include:
+4. Templates
 
-- `inject()` function  
-- `providedIn` options  
-- Tree-shakable providers  
-- Hierarchical injectors  
+New Angular template syntax and control flow.
 
-Folder:  
-[`/src/app/Dependency injection`](src/app/Dependency%20injection)
+Topics
 
----
+@if, @for, @switch
 
-## 7. Routing (Updated) 
-# Angular Routing Demo (v21)
+Expression rules
 
-This folder contains a **complete routing playground** that follows the official
-[`angular.dev/guide/routing`](https://angular.dev/guide/routing) topics and shows
-them all in a single demo app.
+Folder
 
-The goal is to use it in teaching / live sessions:
-students can open the app and *see* every routing feature working, then open the
-corresponding file and compare it with the documentation.
+src/app/Templates
 
----
-1️⃣ Getting Started – Routing Overview
+5. Directives
 
-appStart.ts (or main.ts)
+Creating and using Angular directives.
 
-app.routes.ts
+Topics
 
-home.ts
+Structural Directives
 
-2️⃣ Basic Navigation – Navigate to Routes
+Attribute Directives
 
-home.ts
+Folder
 
-products.ts
+src/app/Directives Part
 
-users.ts
+6. Dependency Injection
 
-3️⃣ Route Params, Query Params & Route State
+Angular 21 modern DI system.
 
-usersDetails.ts
+Topics
 
-route-state-demo.ts
+inject() API
 
-4️⃣ Redirecting Routes
+Provider scopes
 
-app.routes.ts
-(redirect section)
+Folder
 
-5️⃣ Guards – Controlling Route Access
+src/app/Dependency injection
 
-auth.service.ts
+7. Routing
 
-auth.guard.ts
+Full routing demo aligned with Angular documentation.
 
-app.routes.ts
-(the /users/:id route)
+Topics
 
-6️⃣ Resolvers – Route Data Resolvers
+Navigation
 
-fake-user.service.ts
+Params & Query Params
 
-app.routes.ts
-(resolver definition)
+Guards & Resolvers
 
-usersDetails.ts
+Child Routes
 
-7️⃣ Child Routes – Admin Area
+Folder
 
-admin-layout.ts
+src/app/Routing
 
-adminDashboard.ts
+8. Forms
 
-adminSettings.ts or guards-demo-form.ts
+All Angular form APIs in one structured section.
 
-app.routes.ts
-(the /admin route with children)
+Topics
 
-8️⃣ CanDeactivate – Prevent Leaving with Unsaved Changes
+Signal Forms
 
-guards-demo-form.ts
+Reactive & Typed Forms
 
-app.routes.ts
-(pendingChangesGuard section)
+Template-driven Forms
 
-9️⃣ Named Outlets – Popup Help Panel
+Dynamic FormArray
 
-popup-help.ts
+Folder
 
-app.routes.ts
-(route with outlet: 'popup')
+src/app/Forms
 
-appStart.ts
-(<router-outlet name="popup">)
+9. HTTP Client
 
-🔟 Custom Route Matches
+Complete CRUD and networking demos.
 
-custom-match-profile.ts
+Topics
 
-app.routes.ts
-(twitterHandleMatcher)
+GET / POST / PUT / DELETE
 
-1️⃣1️⃣ Rendering, Behavior, Animations & Router Events
+httpResource API
 
-appStart.ts or main.ts
+Interceptors
 
-withInMemoryScrolling
+Apidog mock backend
 
-withPreloading
+Folder
 
-withRouterConfig
+src/app/Http
 
-withViewTransitions
+🎯 Goal
 
-withNavigationErrorHandler
-
-router-logger.service.ts
----
-
-## Tech stack
-
-- **Angular v21** (standalone APIs)
-- **Router v21** with:
-  - `provideRouter(...)`
-  - `withComponentInputBinding`
-  - `withInMemoryScrolling`
-  - `withPreloading(PreloadAllModules)`
-  - `withRouterConfig`
-  - `withViewTransitions`
-
----
-
-## How to run
-
-```bash
-npm install
-ng serve
-ng test
-# open http://localhost:4200
-
-
----
-
-## 8. Forms (Updated) 
-# Angular Forms Demo (v21)
-
-This project demonstrates the different form capabilities in **Angular 21**, including the new **Signal-Based Forms API**, classic Reactive Forms, Typed Reactive Forms, Template-driven Forms, and Dynamic Forms using `FormArray`.
-
-The demo provides a clean tab-based UI for switching between the different examples:
-
----
-
-## 📌 Available Demo Views
-
-### 1. **Signal Forms**
-Located in: `signal-login-form.component.ts`  
-- Uses Angular 21's new **signal-based forms** API.  
-- Fully reactive without zones.  
-- Uses `form()`, `Field`, validators, and `submit()`.  
-- Demonstrates validation and control flow (`@if`, `@switch`) in templates.
-
----
-
-### 2. **Reactive Forms**
-Located in: `reactive-profile-form.component.ts`  
-- Demonstrates the classic **Reactive Forms API** (`FormGroup`, `FormControl`).  
-- Includes validation and value changes tracking.  
-- Foundation for most enterprise Angular applications.
-
----
-
-### 3. **Strictly Typed Reactive Forms**
-Located in: `typed-order-form.component.ts`  
-- Shows the typed version of reactive forms introduced recently.  
-- Strong typing → fewer runtime errors & better autocomplete.
-
----
-
-### 4. **Template-driven Forms**
-Located in: `template-contact-form.component.ts`  
-- Standard Angular template-driven approach using `ngModel`.  
-- Suitable for simple, small-scale forms.
-
----
-
-### 5. **Dynamic Forms (Reactive FormArray)**
-Located in: `dynamic-survey-form.component.ts`  
-- Demonstrates building forms dynamically from configuration.  
-- Useful for surveys, dynamic UI building, and admin panels.
-
----
-
-### 6. **Dynamic Input Forms (Add/Remove Inputs at Runtime)**
-Located in: `DynamicInputDemo.component.ts`  
-- Uses `FormArray` to add/remove inputs dynamically.  
-- Each input has its own validation.  
-- Uses Angular v21 template features:  
-  - `@for` for looping  
-  - `@if` for conditional rendering  
-  - Tracking by the form control itself (`track item`) for stable DOM updates
-
-Example behavior:
-- Click **+** to add a new input  
-- Click **–** to remove a specific input  
-- Cannot accidentally delete the wrong field thanks to stable tracking  
-- Automatically updates JSON output below the form
-
----
-
-## 🧭 Navigation Component
-
-The main navigation exists in:
-
-
-
-Signal Forms examples are inside the Signals folder.
-
----
-
-## 9. HTTP Client --
-1. GET – Fetch list of posts
-
-Uses HttpClient.get()
-
-Handles loading, error states, and signals
-
-Supports query params (_limit=10)
-
-Renders list using @for
-
-Files:
-http-list.component.ts, http-demo.service.ts
-
-2. POST – Create new post
-
-Reactive Form
-
-Sends data with POST
-
-Disables button while submitting
-
-Displays server JSON response
-
-File: http-create.component.ts
-
-3. PUT / PATCH – Edit post
-
-Inline edit mode
-
-Updates using PUT
-
-UI updates instantly without reloading
-
-Files:
-http-list.component.ts → saveEdit()
-http-demo.service.ts → updatePost()
-
-4. DELETE – Remove post
-
-Confirmation dialog
-
-Removes from UI immediately
-
-Uses HttpClient.delete()
-
-Component: delete handler inside http-list.component.ts
-
-5. httpResource – Reactive data fetching
-
-Modern reactive data API (Angular 17+):
-
-resource = inject(HttpClient).resource<Post[]>({
-  url: 'https://jsonplaceholder.typicode.com/posts'
-});
-
-
-File: http-resource-demo.component.ts
-
-6. Logging Interceptor
-
-Logs every request:
-
-Method
-
-URL
-
-Status
-
-Duration
-
-Registered in app.config.ts:
-
-provideHttpClient(withInterceptors([loggingInterceptor]))
-
-
-File: logging.interceptor.ts
-
-7. Apidog Mock API Integration
-
-Mock backend replacing jsonplaceholder for testing.
-
-Supports:
-
-GET /posts?limit=10
-
-POST /posts
-
-PUT /posts/:id
-
-DELETE /posts/:id
-
-File: apiDog.service.ts
-Component: http-list-apidog.component.ts
-
-📁 Project Structure
-/HttpClient
-│── apphttp.component.ts
-│── http-list.component.ts
-│── http-create.component.ts
-│── http-resource-demo.component.ts
-│── http-demo.service.ts
-│── apiDog.service.ts
-│── logging.interceptor.ts
-
-`/src/app/Http`
-
----
-
-## 📌 Notes
-- Folders are organized based on the Angular Documentation structure.  
-- Each chapter aligns with real Angular v21 features and best practices.  
-- You can extend the repo with Routing, HTTP, State Management, Tailwind, or Angular ARIA demos at any time.
-
----
-
-## 🎯 Goal of This Repository
-This repo serves as a practical, hands-on learning path for Angular 21 — following the exact order of the official Angular docs, but with real examples, simplified explanations, and clean project organization.
-
+Provide a clean, practical, documentation-aligned learning path for Angular 21, with real demos, modern APIs, and best practices for teaching and self-study.

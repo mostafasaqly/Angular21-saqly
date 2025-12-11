@@ -1,6 +1,34 @@
-<!-- <custom-pipe-demo/> -->
-<!-- <directives-demo/> -->
- <!-- <app-log></app-log> -->
-  <!-- <app-start></app-start> -->
-<!-- <forms-demo/> -->
-<app-http/>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" routerLink="">Angular 21 Demo</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        @for(item of navItems; track item.path) {
+        <li class="nav-item" >
+          <a
+            class="nav-link"
+            [routerLink]="item.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            {{ item.label }}
+          </a>
+        </li>
+      }
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+</div>
