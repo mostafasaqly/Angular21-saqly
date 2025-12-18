@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { APP_CONFIG } from './Dependency injection/app-config.token';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { loggingInterceptor } from './HttpClinet/logging.interceptor';
+import { provideClientHydration, withEventReplay, withIncrementalHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -41,6 +42,12 @@ export const appConfig: ApplicationConfig = {
     ),
     provideHttpClient(
       withInterceptors([loggingInterceptor]) // intercepting requests/responses
+    ),
+
+     // ✅ Hydration
+    provideClientHydration(
+      withEventReplay(),          // optional: replay clicks during hydration
+      withIncrementalHydration(), // ✅ Incremental Hydration
     ),
   ]
 };

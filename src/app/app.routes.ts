@@ -8,19 +8,7 @@ import {
   ResolveFn,
 } from '@angular/router';
 import { inject } from '@angular/core';
-import { HomeComponent } from './Routing/home';
-import { UserDetailsComponent } from './Routing/usersDetails';
-import { AdminLayoutComponent } from './Routing/admin-layout';
-import { NotFoundComponent } from './Routing/notfound';
-import { ErrorPageComponent } from './Routing/error-page';
-import { CustomMatchProfileComponent } from './Routing/custom-match-profile';
-import { PopupHelpComponent } from './Routing/popup-help';
-import { AdminSettingsComponent } from './Routing/adminSettings';
-import { AdminDashboardComponent } from './Routing/adminDashboard';
-import { RouteStateDemoComponent } from './Routing/route-state-demo';
-import { ProductsComponent } from './Routing/products';
 import { FakeUserService, User } from './Routing/fake-user.service';
-import { authGuard } from './Routing/auth.guard';
 import { AppStartComponent } from './Routing/appStart';
 import { LinkedSignal } from './Signals/linked-signal/linked-signal';
 import { AnatomyComponent } from './Components/AnatomyOfComponents/anatomyOfComponent';
@@ -31,6 +19,7 @@ import { CustomPipeDemo } from './CustomPipe/Components/custom-pipe-demo';
 import { FormsDemoComponent } from './Forms/forms-demo.component';
 import { AppHttpComponent } from './HttpClinet/apphttp.component';
 import { AppLogComponent } from './Dependency injection/logComponent';
+import { PerformanceHomeComponent } from './Server-side & hybrid rendering/perf-home.component';
 
 
 
@@ -140,6 +129,26 @@ export const routes: Routes = [
     component: AppLogComponent,
     title: 'Logging – Demo',
   },
+
+
+  { path: 'Performance', component: PerformanceHomeComponent, title: 'Performance Demo' },
+
+  // lazy page
+  {
+    path: 'perf/list',
+    loadComponent: () =>
+      import('../app/Server-side & hybrid rendering/perf-list.component').then(m => m.PerfListComponent),
+    title: 'Perf – List',
+  },
+
+  // another lazy page
+  {
+    path: 'perf/hydration',
+    loadComponent: () =>
+      import('../app/Server-side & hybrid rendering/perf-hydration.component').then(m => m.PerfHydrationComponent),
+    title: 'Perf – Hydration',
+  },
+
 
   // Fallback
   {

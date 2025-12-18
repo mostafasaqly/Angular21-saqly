@@ -30,5 +30,9 @@ export class App {
     { label: 'Forms', path: 'forms/demo' },
     { label: 'HTTP Client', path: 'http-client' },
     { label: 'Logging', path: 'logging' },
+
+
+    // ✅ Server-side & hybrid rendering (NEW)
+    { label: 'Performance', path: '/Performance' },
   ];
 }
