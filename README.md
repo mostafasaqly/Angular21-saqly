@@ -1,148 +1,166 @@
-Angular 21 – Saqly Learning Path
+# Angular 21 – Saqly Learning Path
 
-This repository contains a complete, structured learning path for Angular 21, aligned with the official documentation.
-Each folder represents a chapter with practical demos.
+This repository contains a complete, structured learning path for **Angular 21**, aligned with the official Angular documentation.  
+Each folder represents a chapter with practical demos and real-world examples.
 
-1. Introduction
+---
+
+## 1. Introduction
 
 Core Angular concepts and quick-start materials.
 
-Topics
+### Topics
+- What is Angular
+- Installation
+- Essentials
 
-What is Angular
+### Folder
+`src/app/Essentials`
 
-Installation
+---
 
-Essentials → src/app/Essentials
-
-2. Signals
+## 2. Signals
 
 Modern reactivity system introduced in Angular 21.
 
-Topics
+### Topics
+- Signal basics
+- Computed & Effects
+- Signal-based forms
 
-Signal basics
+### Folder
+`src/app/Signals`
 
-Computed / Effects
+---
 
-Signal-based forms
+## 3. Components
 
-Folder
+Building UI using standalone Angular components.
 
-src/app/Signals
+### Topics
+- Inputs & Outputs
+- Change Detection
+- Content Projection
 
-3. Components
+### Folder
+`src/app/Components`
 
-Building UI using standalone components.
+---
 
-Topics
-
-Inputs / Outputs
-
-Change Detection
-
-Content Projection
-
-Folder
-
-src/app/Components
-
-4. Templates
+## 4. Templates
 
 New Angular template syntax and control flow.
 
-Topics
+### Topics
+- `@if`, `@for`, `@switch`
+- Template expression rules
+- Performance-friendly rendering
 
-@if, @for, @switch
+### Folder
+`src/app/Templates`
 
-Expression rules
+---
 
-Folder
-
-src/app/Templates
-
-5. Directives
+## 5. Directives
 
 Creating and using Angular directives.
 
-Topics
+### Topics
+- Structural Directives
+- Attribute Directives
+- Reusable directive patterns
 
-Structural Directives
+### Folder
+`src/app/Directives Part`
 
-Attribute Directives
+---
 
-Folder
+## 6. Dependency Injection
 
-src/app/Directives Part
+Modern DI system in Angular 21.
 
-6. Dependency Injection
+### Topics
+- `inject()` API
+- Provider scopes
+- Tree-shakable providers
 
-Angular 21 modern DI system.
+### Folder
+`src/app/Dependency injection`
 
-Topics
+---
 
-inject() API
+## 7. Routing
 
-Provider scopes
+Complete routing playground aligned with Angular documentation.
 
-Folder
+### Topics
+- Navigation
+- Route Params & Query Params
+- Guards & Resolvers
+- Child Routes
 
-src/app/Dependency injection
+### Folder
+`src/app/Routing`
 
-7. Routing
+---
 
-Full routing demo aligned with Angular documentation.
+## 8. Forms
 
-Topics
+All Angular form APIs demonstrated in one structured section.
 
-Navigation
+### Topics
+- Signal Forms
+- Reactive & Typed Forms
+- Template-driven Forms
+- Dynamic `FormArray`
 
-Params & Query Params
+### Folder
+`src/app/Forms`
 
-Guards & Resolvers
+---
 
-Child Routes
+## 9. HTTP Client
 
-Folder
+Complete CRUD and networking demos using `HttpClient`.
 
-src/app/Routing
+### Topics
+- GET / POST / PUT / DELETE
+- `httpResource` API
+- Interceptors
+- Apidog mock backend
 
-8. Forms
+### Folder
+`src/app/Http`
 
-All Angular form APIs in one structured section.
+---
 
-Topics
+## 10. Server-side & Hybrid Rendering (Updated)
 
-Signal Forms
+Performance-focused rendering demos aligned with Angular guides.
 
-Reactive & Typed Forms
+### References
+- https://angular.dev/guide/ssr
+- https://angular.dev/guide/hydration
+- https://angular.dev/guide/incremental-hydration
 
-Template-driven Forms
+### Goal
+Demonstrate SSR basics, hydration, incremental hydration, and hybrid rendering patterns.
 
-Dynamic FormArray
+### What’s Included
+- Server-side rendering setup
+- Client hydration using `provideClientHydration()`
+- Event replay during hydration
+- Incremental Hydration for partial page activation
+- `@defer` blocks for hybrid / lazy rendering
 
-Folder
+### Key Files
+- `src/app/app.config.ts` → hydration providers
+- `src/main.ts` / `src/app/appStart.ts` → SSR-ready bootstrap
+- `src/app/Performance/*` → performance & hydration demos
 
-src/app/Forms
-
-9. HTTP Client
-
-Complete CRUD and networking demos.
-
-Topics
-
-GET / POST / PUT / DELETE
-
-httpResource API
-
-Interceptors
-
-Apidog mock backend
-
-Folder
-
-src/app/Http
-
-🎯 Goal
-
-Provide a clean, practical, documentation-aligned learning path for Angular 21, with real demos, modern APIs, and best practices for teaching and self-study.
+### Example
+```ts
+provideClientHydration(
+  withEventReplay(),
+  withIncrementalHydration(),
+);
