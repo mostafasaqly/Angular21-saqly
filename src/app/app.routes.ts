@@ -20,6 +20,8 @@ import { FormsDemoComponent } from './Forms/forms-demo.component';
 import { AppHttpComponent } from './HttpClinet/apphttp.component';
 import { AppLogComponent } from './Dependency injection/logComponent';
 import { PerformanceHomeComponent } from './Server-side & hybrid rendering/perf-home.component';
+import { RxjsStartComponent } from './RxJs/rxjs-start.component';
+import { RxjsStartWithAngularComponent } from './RxJsWithAngular/rxjs-start.component';
 
 
 
@@ -148,6 +150,17 @@ export const routes: Routes = [
       import('../app/Server-side & hybrid rendering/perf-hydration.component').then(m => m.PerfHydrationComponent),
     title: 'Perf – Hydration',
   },
+
+  {
+  path: 'rxjs',
+  component: RxjsStartComponent,
+  title: 'RxJS – Demo',
+},
+{
+  path: 'rxjsWithAngular',
+  component: RxjsStartWithAngularComponent,
+  title: 'RxJS – With Angular Demo',
+},
 
 
   // Fallback

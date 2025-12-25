@@ -34,5 +34,8 @@ export class App {
 
     // ✅ Server-side & hybrid rendering (NEW)
     { label: 'Performance', path: '/Performance' },
+
+    { label: 'RxJS', path: 'rxjs' },
+    { label: 'RxJS with Angular', path: 'rxjsWithAngular' },
   ];
 }

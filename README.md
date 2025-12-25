@@ -134,7 +134,7 @@ Complete CRUD and networking demos using `HttpClient`.
 
 ---
 
-## 10. Server-side & Hybrid Rendering (Updated)
+## 10. Server-side & Hybrid Rendering 
 
 Performance-focused rendering demos aligned with Angular guides.
 
@@ -164,3 +164,25 @@ provideClientHydration(
   withEventReplay(),
   withIncrementalHydration(),
 );
+
+
+
+
+## RxJS (Overview → Operators → HttpClient)
+
+Aligned with: https://rxjs.dev/guide/overview
+
+### Topics
+- Creating Observables (manual / `of` / `from` / `interval`)
+- Core operators (`map`, `filter`, `tap`, `take`, `finalize`)
+- HttpClient operators:
+  - `switchMap` (search / cancel previous)
+  - `mergeMap` (parallel requests)
+  - `concatMap` (queue requests)
+  - `exhaustMap` (prevent double submit)
+- Error handling (`catchError`, `retry`, `timeout`)
+- Combining streams (`forkJoin`, `combineLatest`)
+
+### Folder
+`src/app/Rxjs`
+
