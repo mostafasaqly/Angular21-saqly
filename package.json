@@ -7,7 +7,12 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:Demo-Project": "node dist/Demo-Project/server/server.mjs"
+    "serve:ssr:Demo-Project": "node dist/Demo-Project/server/server.mjs",
+    "test:karma": "ng test",
+    "test:vitest": "vitest --config vitest.config.ts",
+    "test:vitest:watch": "vitest --watch --config vitest.config.ts",
+    "test:vitest:ui": "vitest --ui --config vitest.config.ts",
+    "test:vitest:coverage": "vitest --coverage --config vitest.config.ts"
   },
   "prettier": {
     "printWidth": 100,
@@ -44,13 +49,17 @@
     "@angular/compiler-cli": "^21.0.3",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
-    "@types/node": "^20.17.19",
+    "@types/node": "^20.19.28",
+    "@vitest/coverage-v8": "^4.0.16",
+    "@vitest/ui": "^4.0.16",
     "jasmine-core": "~5.9.0",
+    "jsdom": "^27.4.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.16"
   }
 }

@@ -186,3 +186,33 @@ Aligned with: https://rxjs.dev/guide/overview
 ### Folder
 `src/app/Rxjs`
 
+
+---
+
+## 11. Unit Testing (Vitest)
+
+Angular 21 uses **Vitest** as the default unit testing framework for new CLI projects (fast Node runner with a DOM emulation like `jsdom`).  
+This section includes practical demos for testing **components, services, directives, pipes, forms, and routing**.
+
+### Topics
+- Component testing (DOM, events, `@Input` / `@Output`, Signals)
+- Reactive Forms testing (validation + submit)
+- Services testing (pure services + `HttpClientTesting`)
+- Attribute directives testing
+- Pipes testing (e.g., SafeUrlPipe)
+- Routing & navigation testing (PUBLIC_ROUTES, redirects, navigation)
+
+### Folder
+`src/app/Unit Testing`
+
+---
+
+### Run Tests
+
+#### Run all unit tests (watch mode) Jasmine & Karma
+```bash
+ng test```
+
+#### Run all unit tests (watch mode) Vitest
+```bash
+npm run test:vitest:ui```
