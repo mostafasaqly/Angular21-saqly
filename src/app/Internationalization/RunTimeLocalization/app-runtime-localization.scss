@@ -1,0 +1,38 @@
+.page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+
+  button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  .active {
+    border-color: #111;
+    font-weight: 600;
+  }
+}
+
+.btn {
+  padding: 8px 12px;
+  border: 1px solid #111;
+  background: #fff;
+  border-radius: 8px;
+}

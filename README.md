@@ -216,3 +216,73 @@ ng test```
 #### Run all unit tests (watch mode) Vitest
 ```bash
 npm run test:vitest:ui```
+
+
+
+## 12. Internationalization (i18n)
+
+Angular 21 supports both **static (build-time)** and **runtime** internationalization strategies.  
+This section demonstrates **both approaches**, aligned with real-world Angular applications.
+
+---
+
+### 1. Static Internationalization (XLF – Build-time)
+
+Angular built-in i18n using **XLIFF (XLF)** files.  
+Each language is compiled into a **separate application build**.
+
+### Topics
+- Angular built-in i18n
+- XLIFF (XLF) translation files
+- Build-time localization
+- Multiple locale builds (e.g. `en`, `ar`)
+- RTL support for Arabic
+- SEO-friendly pages
+
+### Folder
+`src/app/Internationalization`
+
+### Build Localized Versions
+```bash
+ng serve --configuration=ar --port 4300 -o
+ng serve --configuration=en --port 4200 -o
+```
+
+---
+
+### 2. Runtime Internationalization (JSON – Transloco)
+
+Runtime language switching using **JSON-based translations** without rebuilding the application.
+
+### Topics
+- Runtime language switching
+- JSON translation files
+- User language preference
+- RTL / LTR handling at runtime
+- Standalone-friendly configuration
+### Install
+`npm i @ngneat/transloco` 
+### Folder
+`src/app/Runtime-Localization`
+
+### Translation Assets
+```text
+public/i18n
+ ├─ en.json
+ └─ ar.json
+```
+
+### Run Runtime i18n Demo
+```bash
+ng serve
+```
+
+---
+
+### Summary
+- **XLF (Build-time)** → Static, SEO-friendly, separate builds per language
+- **JSON (Runtime)** → Dynamic, instant language switching without rebuild
+
+This setup reflects **best practices used in production Angular applications**.
+
+---

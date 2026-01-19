@@ -1,0 +1,42 @@
+<!-- Language switcher (Bootstrap) -->
+<nav class="d-flex gap-3 mb-3">
+  <a class="btn btn-outline-secondary btn-sm" href="http://localhost:4200/localization">
+    English
+  </a>
+
+  <a class="btn btn-outline-secondary btn-sm" href="http://localhost:4300/localization">
+    العربية
+  </a>
+</nav>
+
+<h1 class="h3 mb-3" i18n="@@app.title">Internationalization Demo</h1>
+
+<p class="text-muted mb-3" i18n="@@app.welcome">
+  Welcome to our app. This text will be translated using Angular i18n.
+</p>
+
+<!-- meaning + description + custom id -->
+<button
+  type="button"
+  class="btn btn-primary"
+  i18n="Action button|Clicks to save user profile@@profile.save"
+>
+  Save
+</button>
+
+<hr class="my-4" />
+
+<!-- ICU example: pluralization -->
+<p class="mb-0" i18n="@@cart.items">
+  {itemsCount, plural,
+    =0 {You have no items}
+    =1 {You have one item}
+    other {You have # items}
+  }
+</p>
+
+<hr class="my-4" />
+
+<!-- date/number formatting (based on locale) -->
+<p class="mb-2" i18n="@@today.date">Today: {{ today | date:'fullDate' }}</p>
+<p class="mb-0" i18n="@@price">Price: {{ price | currency:'USD' }}</p>

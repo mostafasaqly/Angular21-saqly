@@ -6,6 +6,7 @@ import { APP_CONFIG } from './Dependency injection/app-config.token';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { loggingInterceptor } from './HttpClinet/logging.interceptor';
 import { provideClientHydration, withEventReplay, withIncrementalHydration } from '@angular/platform-browser';
+import { translocoProviders } from './transloco.config';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -49,5 +50,6 @@ export const appConfig: ApplicationConfig = {
       withEventReplay(),          // optional: replay clicks during hydration
       withIncrementalHydration(), // ✅ Incremental Hydration
     ),
+    ...translocoProviders,
   ]
 };

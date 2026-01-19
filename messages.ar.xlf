@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" target-language="ar" datatype="plaintext" original="ng2.template">
+    <body>
+
+      <trans-unit id="app.title" datatype="html">
+        <source>Internationalization Demo</source>
+        <target>عرض توضيحي لدعم تعدد اللغات</target>
+      </trans-unit>
+
+      <trans-unit id="app.welcome" datatype="html">
+        <source>
+          Welcome to our app. This text will be translated using Angular i18n.
+        </source>
+        <target>
+          مرحبًا بك في تطبيقنا. سيتم ترجمة هذا النص باستخدام نظام الترجمة في Angular.
+        </target>
+      </trans-unit>
+
+      <trans-unit id="profile.save" datatype="html">
+        <source>
+          Save
+        </source>
+        <target>
+          حفظ
+        </target>
+        <note priority="1" from="description">Clicks to save user profile</note>
+        <note priority="1" from="meaning">Action button</note>
+      </trans-unit>
+
+      <trans-unit id="cart.items" datatype="html">
+        <source>
+          <x id="ICU" equiv-text="{itemsCount, plural,
+            =0 {You have no items}
+            =1 {You have one item}
+            other {You have # items}
+          }"/>
+        </source>
+        <target>
+          <x id="ICU" equiv-text="{itemsCount, plural,
+            =0 {لا توجد عناصر في سلة التسوق}
+            =1 {لديك عنصر واحد}
+            other {لديك # عناصر}
+          }"/>
+        </target>
+      </trans-unit>
+
+      <trans-unit id="2249546412415511624" datatype="html">
+        <source>
+          {VAR_PLURAL, plural,
+            =0 {You have no items}
+            =1 {You have one item}
+            other {You have # items}
+          }
+        </source>
+        <target>
+          {VAR_PLURAL, plural,
+            =0 {لا توجد عناصر}
+            =1 {لديك عنصر واحد}
+            other {لديك # عناصر}
+          }
+        </target>
+      </trans-unit>
+
+      <trans-unit id="today.date" datatype="html">
+        <source>
+          Today:
+          <x id="INTERPOLATION" equiv-text="{{ today | date:'fullDate' }}"/>
+        </source>
+        <target>
+          اليوم:
+          <x id="INTERPOLATION" equiv-text="{{ today | date:'fullDate' }}"/>
+        </target>
+      </trans-unit>
+
+      <trans-unit id="price" datatype="html">
+        <source>
+          Price:
+          <x id="INTERPOLATION" equiv-text="{{ price | currency:'USD' }}"/>
+        </source>
+        <target>
+          السعر:
+          <x id="INTERPOLATION" equiv-text="{{ price | currency:'USD' }}"/>
+        </target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

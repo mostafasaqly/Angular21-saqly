@@ -1,0 +1,28 @@
+<div class="page">
+  <header class="top">
+    <h1>{{ 'appTitle' | transloco }}</h1>
+
+    <div class="actions">
+      <button (click)="setLang('en')" [class.active]="lang() === 'en'">English</button>
+      <button (click)="setLang('ar')" [class.active]="lang() === 'ar'">العربية</button>
+    </div>
+  </header>
+
+  <p>{{ 'welcome' | transloco }}</p>
+
+  <button class="btn">{{ 'save' | transloco }}</button>
+
+  <hr />
+
+  <p>{{ 'items' | transloco:{ count: itemsCount } }}</p>
+
+  <hr />
+
+  <p>
+    {{ 'today' | transloco:{ date: (today | date:'fullDate') } }}
+  </p>
+
+  <p>
+    {{ 'price' | transloco:{ value: (price | currency:'USD') } }}
+  </p>
+</div>

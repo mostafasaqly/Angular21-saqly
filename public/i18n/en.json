@@ -1,0 +1,8 @@
+{
+  "appTitle": "Runtime i18n Demo",
+  "welcome": "Welcome to our app",
+  "save": "Save",
+  "items": "You have {{count}} items",
+  "today": "Today: {{date}}",
+  "price": "Price: {{value}}"
+}

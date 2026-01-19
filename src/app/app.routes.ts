@@ -23,6 +23,7 @@ import { PerformanceHomeComponent } from './Server-side & hybrid rendering/perf-
 import { RxjsStartComponent } from './RxJs/rxjs-start.component';
 import { RxjsStartWithAngularComponent } from './RxJsWithAngular/rxjs-start.component';
 import { ARIA_ROUTES } from './Angular Aria/aria.routes';
+import { LOCALIZATION_ROUTES } from './Internationalization/internationlization.route';
 
 
 
@@ -164,6 +165,7 @@ export const routes: Routes = [
 },
 
   ...ARIA_ROUTES,
+  ...LOCALIZATION_ROUTES,
 
 
 
