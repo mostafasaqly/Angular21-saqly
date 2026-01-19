@@ -1,0 +1,245 @@
+/* Layout */
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 18px;
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.head h2 {
+  margin: 0 0 6px;
+  font-size: 40px;
+  font-weight: 800;
+}
+.head p {
+  margin: 0;
+  opacity: 0.75;
+}
+
+/* Tabs */
+.tabs {
+  margin-top: 18px;
+}
+
+.tablist {
+  display: inline-flex;
+  gap: 10px;
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+  margin: 0 auto 22px;
+  justify-content: center;
+}
+
+.tab {
+  list-style: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  color: #222;
+  transition: background 160ms ease, box-shadow 160ms ease, color 160ms ease;
+}
+
+.tab:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.tab.is-active {
+  background: #111;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Panels */
+.panel {
+  padding: 10px 0;
+}
+
+.title {
+  margin: 22px 0 10px;
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.hint {
+  text-align: center;
+  opacity: 0.75;
+  margin-top: 14px;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+
+.group {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.sep {
+  width: 1px;
+  height: 28px;
+  background: rgba(0, 0, 0, 0.12);
+  margin: 0 6px;
+}
+
+button[ngToolbarWidget] {
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: #fff;
+  color: #111;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 120ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+button[ngToolbarWidget]:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+button[ngToolbarWidget]:active {
+  transform: translateY(1px);
+}
+
+/* Style pressed/checked states (from aria attrs) */
+button[ngToolbarWidget][aria-pressed="true"],
+button[ngToolbarWidget][aria-checked="true"] {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* Accordion */
+.accordion {
+  max-width: 680px;
+  margin: 0 auto;
+  display: grid;
+  gap: 10px;
+}
+
+.item {
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.trigger {
+  width: 100%;
+  text-align: left;
+  padding: 14px 16px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.content {
+  padding: 0 16px 14px;
+  color: #333;
+}
+
+/* Menu */
+.menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.menu {
+  min-width: 240px;
+  padding: 8px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  color: #111;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+}
+
+div[ngMenuItem] {
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 600;
+  color: #111;
+}
+
+div[ngMenuItem]:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+div[ngMenuItem][data-active="true"] {
+  background: rgba(0, 0, 0, 0.10);
+}
+
+.separator {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.10);
+  margin: 8px 6px;
+}
+button[ngToolbarWidget][aria-pressed="true"],
+button[ngToolbarWidget][aria-checked="true"],
+button[ngToolbarWidget][data-selected="true"],
+button[ngToolbarWidget][data-active="true"] {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+/* Text Editor */
+.editor {
+  margin-top: 18px;
+  padding: 16px 18px;
+  min-height: 120px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  font-size: 18px;
+  line-height: 1.6;
+  transition: all 180ms ease;
+}
+
+/* Formatting */
+.editor.bold {
+  font-weight: 800;
+}
+
+.editor.italic {
+  font-style: italic;
+}
+
+.editor.align-center {
+  text-align: center;
+}
+
+.editor.align-right {
+  text-align: right;
+}

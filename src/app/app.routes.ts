@@ -22,6 +22,7 @@ import { AppLogComponent } from './Dependency injection/logComponent';
 import { PerformanceHomeComponent } from './Server-side & hybrid rendering/perf-home.component';
 import { RxjsStartComponent } from './RxJs/rxjs-start.component';
 import { RxjsStartWithAngularComponent } from './RxJsWithAngular/rxjs-start.component';
+import { ARIA_ROUTES } from './Angular Aria/aria.routes';
 
 
 
@@ -161,6 +162,10 @@ export const routes: Routes = [
   component: RxjsStartWithAngularComponent,
   title: 'RxJS – With Angular Demo',
 },
+
+  ...ARIA_ROUTES,
+
+
 
 
   // Fallback

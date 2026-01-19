@@ -1,0 +1,229 @@
+<section class="page">
+  <header class="head">
+    <h2>Angular Aria Demos</h2>
+    <p>
+      Headless accessible directives (keyboard, ARIA attributes, focus management) — you provide
+      HTML + CSS.
+    </p>
+  </header>
+
+  <!-- =============== Tabs =============== -->
+  <div ngTabs class="tabs">
+    <ul
+      ngTabList
+      class="tablist"
+      [selectedTab]="selectedTab()"
+      (selectedTabChange)="onTabChange($event)"
+      aria-label="Aria demo sections"
+    >
+      <li ngTab value="toolbar" class="tab" #t1="ngTab" [class.is-active]="t1.selected()">
+        Toolbar
+      </li>
+
+      <li ngTab value="accordion" class="tab" #t2="ngTab" [class.is-active]="t2.selected()">
+        Accordion
+      </li>
+
+      <li ngTab value="menu" class="tab" #t3="ngTab" [class.is-active]="t3.selected()">Menu</li>
+    </ul>
+
+    <!-- Toolbar Panel -->
+    <div ngTabPanel value="toolbar" class="panel">
+      <ng-template ngTabContent>
+        <h3 class="title">Toolbar (ngToolbar)</h3>
+
+        <!-- based on Angular docs toolbar sample -->
+        <div ngToolbar aria-label="Text Formatting Tools" class="toolbar">
+          <div class="sep" role="separator" aria-orientation="vertical"></div>
+
+          <div class="group">
+            <button
+              ngToolbarWidget
+              value="bold"
+              type="button"
+              #bold="ngToolbarWidget"
+              [attr.aria-pressed]="isBold() ? 'true' : 'false'"
+              (click)="toggleBold()"
+            >
+              Bold
+            </button>
+
+            <button
+              ngToolbarWidget
+              value="italic"
+              type="button"
+              #italic="ngToolbarWidget"
+              [attr.aria-pressed]="isItalic() ? 'true' : 'false'"
+              (click)="toggleItalic()"
+            >
+              Italic
+            </button>
+          </div>
+
+          <div class="sep" role="separator" aria-orientation="vertical"></div>
+
+          <div
+            ngToolbarWidgetGroup
+            role="radiogroup"
+            class="group"
+            aria-label="Text alignment options"
+          >
+            <button
+              ngToolbarWidget
+              role="radio"
+              value="left"
+              type="button"
+              [attr.aria-checked]="align() === 'left' ? 'true' : 'false'"
+              (click)="setAlign('left')"
+            >
+              Left
+            </button>
+
+            <button
+              ngToolbarWidget
+              role="radio"
+              value="center"
+              type="button"
+              [attr.aria-checked]="align() === 'center' ? 'true' : 'false'"
+              (click)="setAlign('center')"
+            >
+              Center
+            </button>
+
+            <button
+              ngToolbarWidget
+              role="radio"
+              value="right"
+              type="button"
+              [attr.aria-checked]="align() === 'right' ? 'true' : 'false'"
+              (click)="setAlign('right')"
+            >
+              Right
+            </button>
+          </div>
+        </div>
+
+        <p class="hint">Arrow keys toolbar، Enter/Space</p>
+      </ng-template>
+      <div
+        class="editor"
+        [class.bold]="isBold()"
+        [class.italic]="isItalic()"
+        [class.align-center]="align() === 'center'"
+        [class.align-right]="align() === 'right'"
+      >
+        This text will react to the toolbar actions.
+        <br />
+        Try Bold, Italic, and Alignment using keyboard or mouse.
+      </div>
+    </div>
+    <!-- Text Preview -->
+
+    <!-- Accordion Panel -->
+    <div ngTabPanel value="accordion" class="panel">
+      <ng-template ngTabContent>
+        <h3 class="title">Accordion (ngAccordionGroup)</h3>
+
+        <div ngAccordionGroup class="accordion" [multiExpandable]="true">
+          <div class="item">
+            <button ngAccordionTrigger panelId="item-1" class="trigger">
+              What is Angular Aria?
+            </button>
+            <div ngAccordionPanel panelId="item-1" class="content">
+              <ng-template ngAccordionContent>
+                <p>
+                  Angular Aria provides headless directives implementing common WAI-ARIA patterns.
+                </p>
+              </ng-template>
+            </div>
+          </div>
+
+          <div class="item">
+            <button ngAccordionTrigger panelId="item-2" class="trigger">Why it matters?</button>
+            <div ngAccordionPanel panelId="item-2" class="content">
+              <ng-template ngAccordionContent>
+                <ul>
+                  <li>Keyboard navigation</li>
+                  <li>Focus management</li>
+                  <li>ARIA attributes for screen readers</li>
+                </ul>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+
+        <p class="hint">Up/Down triggers، Enter/Space</p>
+      </ng-template>
+    </div>
+
+    <!-- Menu Panel -->
+    <div ngTabPanel value="menu" class="panel">
+      <ng-template ngTabContent>
+        <h3 class="title">Menu (ngMenuTrigger + ngMenu + ngMenuItem)</h3>
+
+        <button
+          ngMenuTrigger
+          #origin
+          #trigger="ngMenuTrigger"
+          [menu]="formatMenu()"
+          class="menu-trigger"
+        >
+          Open Menu
+        </button>
+
+        <p class="hint" *ngIf="lastMenuAction()">
+          Last action: <b>{{ lastMenuAction() }}</b>
+        </p>
+
+        <!-- Overlay (as in Angular docs sample) -->
+        <ng-template
+          [cdkConnectedOverlayOpen]="trigger.expanded()"
+          [cdkConnectedOverlay]="{ origin, usePopover: 'inline' }"
+          [cdkConnectedOverlayPositions]="[
+            { originX: 'start', originY: 'bottom', overlayX: 'start', overlayY: 'top', offsetY: 6 }
+          ]"
+          cdkAttachPopoverAsChild
+        >
+          <div ngMenu class="menu" #formatMenu="ngMenu">
+            <ng-template ngMenuContent>
+              <div ngMenuItem value="Mark as read" (click)="lastMenuAction.set('Mark as read')">
+                Mark as read
+              </div>
+
+              <div ngMenuItem value="Snooze" (click)="lastMenuAction.set('Snooze')">Snooze</div>
+
+              <div role="separator" aria-orientation="horizontal" class="separator"></div>
+
+              <div ngMenuItem value="Categorize" #categorizeItem [submenu]="categorizeMenu()">
+                Categorize →
+              </div>
+
+              <!-- Submenu overlay -->
+              <ng-template
+                [cdkConnectedOverlayOpen]="formatMenu.visible()"
+                [cdkConnectedOverlay]="{ origin: categorizeItem, usePopover: 'inline' }"
+                [cdkConnectedOverlayPositions]="[
+                  { originX: 'end', originY: 'top', overlayX: 'start', overlayY: 'top', offsetX: 8 }
+                ]"
+                cdkAttachPopoverAsChild
+              >
+                <div ngMenu class="menu" #categorizeMenu="ngMenu">
+                  <ng-template ngMenuContent>
+                    <div ngMenuItem value="Star" (click)="lastMenuAction.set('Star')">Star</div>
+                    <div ngMenuItem value="Label" (click)="lastMenuAction.set('Label')">Label</div>
+                  </ng-template>
+                </div>
+              </ng-template>
+
+              <div role="separator" aria-orientation="horizontal" class="separator"></div>
+
+              <div ngMenuItem value="Delete" (click)="lastMenuAction.set('Delete')">Delete</div>
+            </ng-template>
+          </div>
+        </ng-template>
+
+        <p class="hint">Arrow keys + Home/End Enter Esc</p>
+      </ng-template>
+    </div>
+  </div>
+</section>
