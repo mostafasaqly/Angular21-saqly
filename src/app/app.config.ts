@@ -21,6 +21,9 @@ export const appConfig: ApplicationConfig = {
     },
     provideRouter(
       routes,
+      withViewTransitions({
+        skipInitialTransition: true,
+      }),
       withComponentInputBinding(), // Bind route params/data @Input
       withInMemoryScrolling({
         scrollPositionRestoration: 'enabled',

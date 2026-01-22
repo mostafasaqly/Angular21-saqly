@@ -7,8 +7,8 @@ import { App } from './app/app';
 
 bootstrapApplication(App, appConfig)
   .then((appRef) => {
-    const locale = appRef.injector.get(LOCALE_ID); // e.g. 'en-US' or 'ar'
-    document.documentElement.lang = locale;
-    document.documentElement.dir = locale.startsWith('ar') ? 'rtl' : 'ltr';
+    // const locale = appRef.injector.get(LOCALE_ID); // e.g. 'en-US' or 'ar'
+    // document.documentElement.lang = locale;
+    // document.documentElement.dir = locale.startsWith('ar') ? 'rtl' : 'ltr';
   })
   .catch(console.error);

@@ -1,0 +1,74 @@
+@import './animations.css';
+.card {
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  max-width: 760px;
+}
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.input {
+  flex: 1;
+  min-width: 220px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  background: #0b1220;
+  color: #e5e7eb;
+}
+.btn {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  background: #0b1220;
+  color: #e5e7eb;
+  cursor: pointer;
+}
+.btn.ghost {
+  background: transparent;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #2b364a;
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: rgba(148, 163, 184, 0.06);
+}
+
+.li-enter {
+  animation: popIn 260ms ease-out both;
+}
+.li-leave {
+  animation: popOut 220ms ease-in both;
+}
+
+.x {
+  border: 1px solid #334155;
+  background: transparent;
+  color: #e5e7eb;
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.hint {
+  margin-top: 10px;
+  opacity: 0.85;
+  color: #cbd5e1;
+  font-size: 13px;
+}

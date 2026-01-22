@@ -24,6 +24,8 @@ import { RxjsStartComponent } from './RxJs/rxjs-start.component';
 import { RxjsStartWithAngularComponent } from './RxJsWithAngular/rxjs-start.component';
 import { ARIA_ROUTES } from './Angular Aria/aria.routes';
 import { LOCALIZATION_ROUTES } from './Internationalization/internationlization.route';
+import { ANIMATION_ROUTES } from './Animations/animate.toutes';
+import { DRAG_DROP_ROUTES } from './DragAndDrop/drag-drop.routes';
 
 
 
@@ -166,7 +168,8 @@ export const routes: Routes = [
 
   ...ARIA_ROUTES,
   ...LOCALIZATION_ROUTES,
-
+  ...ANIMATION_ROUTES,
+...DRAG_DROP_ROUTES,
 
 
 
