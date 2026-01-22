@@ -286,3 +286,60 @@ ng serve
 This setup reflects **best practices used in production Angular applications**.
 
 ---
+---
+
+## 13. Animations
+
+Angular 21 provides a modern, **CSS-first animation model** with helpers like  
+`animate.enter` and `animate.leave`, making animations **simpler, faster, and more declarative**.
+
+This section contains **practical demos** that cover real-world animation use cases, not just syntax examples.
+
+### Topics
+
+- Enter animations using `animate.enter`
+- Leave animations using `animate.leave`
+- CSS-only animations with reusable keyframes
+- Binding-based animations (state driven)
+- Using `@starting-style` for smooth leave transitions
+- Handling animation callbacks and cleanup
+- Staggered animations using `animation-delay`
+- Route transition animations
+- Best practices & common pitfalls
+
+### Folder
+
+```text
+src/app/Animations
+```
+
+
+
+## 14. Drag and Drop
+
+Angular 21 uses **Angular CDK DragDrop** to build drag & drop features
+without third-party libraries.
+
+This section contains **practical demos** for real-world use cases
+(sortable lists, kanban boards, and advanced interactions).
+
+### Topics
+
+- Single draggable elements
+- Reorder list (sorting)
+- Transfer items between lists (kanban)
+- Drag handle (`cdkDragHandle`)
+- Lock axis (`cdkDragLockAxis`: `x` / `y`)
+- Drag delay (press & hold) (`cdkDragStartDelay`)
+- Disable drag (`cdkDragDisabled`)
+- Disable sorting (`cdkDropListSortingDisabled`)
+- Custom drag preview (`cdkDragPreview`)
+- Custom placeholder (`cdkDragPlaceholder`)
+- Dragging inside scrollable containers
+- State updates with **Signals**
+
+### Folder
+
+```text
+src/app/DragAndDrop
+```
